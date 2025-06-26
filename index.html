@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>M. Thaher Basha | Portfolio</title>
+    <style>
+      :root {
+        --primary: #2c3e50;
+        --secondary: #3498db;
+        --accent: #e74c3c;
+        --light: #ecf0f1;
+        --dark: #2c3e50;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      }
+
+      body {
+        background-color: var(--light);
+        color: var(--dark);
+        line-height: 1.6;
+      }
+
+      header {
+        background: linear-gradient(135deg, var(--primary), var(--secondary));
+        color: white;
+        padding: 2rem 0;
+        text-align: center;
+        position: relative;
+        overflow: hidden;
+        border-bottom: 3px solid var(--secondary);
+      }
+
+      .header-content {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 2rem;
+        position: relative;
+        z-index: 2;
+      }
+
+      h1 {
+        font-size: 3rem;
+        margin-bottom: 0.5rem;
+      }
+
+      .tagline {
+        font-size: 1.2rem;
+        opacity: 0.9;
+        margin-bottom: 1.5rem;
+      }
+
+      .contact-info {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 1.5rem;
+        margin-top: 1rem;
+      }
+
+      .contact-item {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+      }
+
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 2rem;
+      }
+
+      section {
+        margin-bottom: 3rem;
+        background: white;
+        border-radius: 8px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        padding: 2rem;
+        border-top: 3px solid var(--secondary);
+      }
+
+      h2 {
+        color: var(--primary);
+        margin-bottom: 1.5rem;
+        padding-bottom: 0.5rem;
+        border-bottom: 3px dotted var(--accent);
+        display: inline-block;
+      }
+
+      .skills-container {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1rem;
+      }
+
+      .skill-category {
+        flex: 1;
+        min-width: 250px;
+      }
+
+      .skill-item {
+        margin-bottom: 1rem;
+      }
+
+      .skill-name {
+        font-weight: bold;
+        margin-bottom: 0.3rem;
+      }
+
+      .skill-bar {
+        height: 10px;
+        background-color: #ddd;
+        border-radius: 5px;
+        overflow: hidden;
+      }
+
+      .skill-progress {
+        height: 100%;
+        background: linear-gradient(90deg, var(--secondary), var(--accent));
+        border-radius: 5px;
+      }
+
+      .project-card {
+        margin-bottom: 2rem;
+        border-left: 4px solid var(--accent);
+        padding-left: 1rem;
+      }
+
+      .project-title {
+        font-size: 1.3rem;
+        color: var(--primary);
+        margin-bottom: 0.5rem;
+        border-bottom: 2px dashed var(--secondary);
+        padding-bottom: 0.3rem;
+        display: inline-block;
+      }
+
+      .project-tech {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+        margin: 0.8rem 0;
+      }
+
+      .tech-tag {
+        background-color: var(--secondary);
+        color: white;
+        padding: 0.3rem 0.8rem;
+        border-radius: 20px;
+        font-size: 0.8rem;
+      }
+
+      .education-item,
+      .experience-item {
+        margin-bottom: 1.5rem;
+        padding-bottom: 1.5rem;
+        border-bottom: 2px dotted #eee;
+      }
+
+      .education-item:last-child,
+      .experience-item:last-child {
+        border-bottom: none;
+        margin-bottom: 0;
+        padding-bottom: 0;
+      }
+
+      .item-header {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        margin-bottom: 0.5rem;
+        align-items: center;
+      }
+
+      .item-title {
+        font-weight: bold;
+        color: var(--primary);
+        flex: 1;
+        min-width: 200px;
+      }
+
+      .item-date {
+        color: #666;
+        text-align: right;
+      }
+
+      .item-subtitle {
+        color: #666;
+        margin-bottom: 0.5rem;
+        width: 100%;
+      }
+
+      .certifications {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1rem;
+      }
+
+      .certification-card {
+        background-color: var(--light);
+        padding: 1rem;
+        border-radius: 8px;
+        flex: 1;
+        min-width: 250px;
+        border-left: 3px solid var(--accent);
+      }
+
+      footer {
+        background-color: var(--primary);
+        color: white;
+        text-align: center;
+        padding: 2rem 0;
+        margin-top: 2rem;
+        border-top: 3px solid var(--secondary);
+      }
+
+      .social-links {
+        display: flex;
+        justify-content: center;
+        gap: 1.5rem;
+        margin-top: 1rem;
+      }
+
+      .social-link {
+        color: white;
+        text-decoration: none;
+        transition: color 0.3s;
+      }
+
+      .social-link:hover {
+        color: var(--secondary);
+      }
+
+      @media (max-width: 768px) {
+        h1 {
+          font-size: 2rem;
+        }
+
+        .header-content {
+          padding: 0 1rem;
+        }
+
+        .container {
+          padding: 1rem;
+        }
+
+        section {
+          padding: 1.5rem;
+        }
+
+        .item-header {
+          flex-direction: column;
+          align-items: flex-start;
+        }
+
+        .item-date {
+          text-align: left;
+          margin-top: 0.3rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="header-content">
+        <h1>M. THAHER BASHA</h1>
+        <p class="tagline">Full Stack Developer | Java Specialist</p>
+        <div class="contact-info">
+          <div class="contact-item">📍 Bangalore, India</div>
+          <div class="contact-item">📧 taherb753@gmail.com</div>
+          <div class="contact-item">📞 +91-9515400565</div>
+        </div>
+      </div>
+    </header>
+
+    <div class="container">
+      <section id="about">
+        <h2>Professional Summary</h2>
+        <p>
+          Enthusiastic and detail-oriented B.Tech graduate (2025) with a strong
+          foundation in programming and software development. Proficient in Java
+          and web technologies with hands-on experience in building technical
+          solutions. Eager to contribute to innovative IT solutions and
+          continuously learn new technologies in a dynamic work environment.
+        </p>
+      </section>
+
+      <section id="skills">
+        <h2>Technical Skills</h2>
+        <div class="skills-container">
+          <div class="skill-category">
+            <h3>Programming Languages</h3>
+            <div class="skill-item">
+              <div class="skill-name">Java (Core & Advanced)</div>
+              <div class="skill-bar">
+                <div class="skill-progress" style="width: 90%"></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="skill-category">
+            <h3>Web Development</h3>
+            <div class="skill-item">
+              <div class="skill-name">HTML5</div>
+              <div class="skill-bar">
+                <div class="skill-progress" style="width: 85%"></div>
+              </div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-name">CSS3</div>
+              <div class="skill-bar">
+                <div class="skill-progress" style="width: 80%"></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="skill-category">
+            <h3>Databases</h3>
+            <div class="skill-item">
+              <div class="skill-name">MySQL</div>
+              <div class="skill-bar">
+                <div class="skill-progress" style="width: 85%"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="projects">
+        <h2>Featured Project</h2>
+        <div class="project-card">
+          <h3 class="project-title">
+            Forecasting Credit Card Fraud Detection Using Machine Learning
+          </h3>
+          <p>
+            Developed and designed a comprehensive fraud detection system that
+            analyzes credit card transactions to identify potential fraudulent
+            activities.
+          </p>
+
+          <div class="project-tech">
+            <span class="tech-tag">Machine Learning</span>
+            <span class="tech-tag">CNN</span>
+            <span class="tech-tag">LSTM</span>
+            <span class="tech-tag">Decision Tree</span>
+            <span class="tech-tag">Random Forest</span>
+            <span class="tech-tag">Stacking</span>
+            <span class="tech-tag">HTML/CSS</span>
+          </div>
+
+          <h4>Key Achievements:</h4>
+          <ul>
+            <li>
+              Implemented multiple ML algorithms to improve detection accuracy
+            </li>
+            <li>Designed an interface for transaction monitoring</li>
+            <li>
+              Integrated the system with a database for historical analysis
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <section id="education">
+        <h2>Education</h2>
+        <div class="education-item">
+          <div class="item-header">
+            <span class="item-title"
+              >Bachelor of Technology (Computer Science)</span
+            >
+            <span class="item-date">June 2021 – April 2025</span>
+          </div>
+          <div class="item-subtitle">
+            St. John's College of Engineering and Technology, Yerrakota
+          </div>
+          <p>CGPA: 7.7/10</p>
+        </div>
+
+        <div class="education-item">
+          <div class="item-header">
+            <span class="item-title">Board of Intermediate Education</span>
+            <span class="item-date">June 2019 – May 2021</span>
+          </div>
+          <div class="item-subtitle">Narayana Junior College, Adoni</div>
+          <p>CGPA: 6.8/10</p>
+        </div>
+
+        <div class="education-item">
+          <div class="item-header">
+            <span class="item-title">Board of Secondary School Education</span>
+            <span class="item-date">May 2019</span>
+          </div>
+          <div class="item-subtitle">
+            Alfa English Medium High School, Adoni
+          </div>
+          <p>CGPA: 9.0/10</p>
+        </div>
+      </section>
+
+      <section id="experience">
+        <h2>Experience & Training</h2>
+        <div class="experience-item">
+          <div class="item-header">
+            <span class="item-title">Full-Stack Web Development Course</span>
+            <span class="item-date">Current</span>
+          </div>
+          <div class="item-subtitle">TAP ACADEMY, Bangalore</div>
+          <p>
+            Comprehensive training in full-stack development covering front-end
+            and back-end technologies.
+          </p>
+        </div>
+
+        <div class="experience-item">
+          <div class="item-header">
+            <span class="item-title">Web Development Course</span>
+            <span class="item-date">Completed</span>
+          </div>
+          <div class="item-subtitle">UDEMY</div>
+          <p>Completed web development course covering HTML and CSS.</p>
+        </div>
+      </section>
+
+      <section id="certifications">
+        <h2>Certifications</h2>
+        <div class="certifications">
+          <div class="certification-card">
+            <h3>Full Stack Java</h3>
+            <p>SkillDzire</p>
+          </div>
+
+          <div class="certification-card">
+            <h3>Accenture Nordics Consultant</h3>
+            <p>Accenture</p>
+          </div>
+
+          <div class="certification-card">
+            <h3>Web Development</h3>
+            <p>UDEMY</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="languages">
+        <h2>Languages</h2>
+        <p>English (Professional), Hindi, Telugu, Urdu</p>
+      </section>
+    </div>
+
+    <footer>
+      <p>Connect with me</p>
+      <div class="social-links">
+        <a href="#" class="social-link">LinkedIn</a>
+        <a href="mailto:taherb753@gmail.com" class="social-link">Email</a>
+        <a href="https://github.com/yourusername" class="social-link">GitHub</a>
+      </div>
+      <p style="margin-top: 1rem">
+        &copy; 2024 M. Thaher Basha. All rights reserved.
+      </p>
+    </footer>
+  </body>
+</html>
